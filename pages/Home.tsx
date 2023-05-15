@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
 	return (
-		<View>
+		<SafeAreaView>
+			<StatusBar style="auto" />
 			<Text>Home</Text>
-		</View>
+		</SafeAreaView>
 	);
 };
 
