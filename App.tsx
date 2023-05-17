@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { BottomTabBar, createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -8,7 +9,8 @@ import FirstScreen from "./pages/FirstScreen";
 import Home from "./pages/Home";
 
 const Stack = createNativeStackNavigator<RootStackParamsList>();
-const initialParams = { pageNumber: 2, isLastPage: false };
+const Tab = createBottomTabNavigator();
+const initialParams = { pageNumber: 1, isLastPage: false };
 export default function App() {
 	return (
 		<SafeAreaProvider>
@@ -28,6 +30,10 @@ export default function App() {
 						initialParams={initialParams}
 					/>
 				</Stack.Navigator>
+				<Tab.Navigator>
+					<Tab.Screen name="Home" component={Home} />
+					<Tab.Screen name="FirstScreen" component={FirstScreen} initialParams={initialParams} />
+				</Tab.Navigator>
 			</NavigationContainer>
 		</SafeAreaProvider>
 	);
