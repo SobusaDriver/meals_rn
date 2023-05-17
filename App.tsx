@@ -8,7 +8,7 @@ import FirstScreen from "./pages/FirstScreen";
 import Home from "./pages/Home";
 
 const Stack = createNativeStackNavigator<RootStackParamsList>();
-const initialParams = { pageNumber: 1, isLastPage: false };
+const initialParams = { pageNumber: 2, isLastPage: false };
 export default function App() {
 	return (
 		<SafeAreaProvider>
