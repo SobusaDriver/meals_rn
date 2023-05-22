@@ -16,23 +16,10 @@ export default function App() {
 		<SafeAreaProvider>
 			<StatusBar style="auto" />
 			<NavigationContainer>
-				<Stack.Navigator initialRouteName="Home">
-					<Stack.Screen
-						name="Home"
-						component={Home}
-						options={{
-							headerShown: false,
-						}}
-					/>
-					<Stack.Screen
-						name="FirstScreen"
-						component={FirstScreen}
-						initialParams={initialParams}
-					/>
-				</Stack.Navigator>
-				<Tab.Navigator>
-					<Tab.Screen name="Home" component={Home} />
-					<Tab.Screen name="FirstScreen" component={FirstScreen} initialParams={initialParams} />
+
+				<Tab.Navigator initialRouteName="Home">
+					<Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
+					<Tab.Screen name="FirstScreen" component={FirstScreen} initialParams={initialParams} options={{ headerShown: false }} />
 				</Tab.Navigator>
 			</NavigationContainer>
 		</SafeAreaProvider>
